@@ -26,14 +26,12 @@ public class UomController {
 	public String showRegPage() {
 		return "RegisterPage";
 	}
-	
 	@PostMapping("/regUom")
 	public String regUom(@ModelAttribute Uom uom,ModelMap map) {
 		long uomId=service.saveUom(	uom);
 		map.addAttribute("message","Uom "+uomId+" created");
 		return "RegisterPage";
 	}
-	
 	@GetMapping("/showAllUom")
 	public String showUom(ModelMap map) {
 		List<Uom> uomList=service.getAll();
